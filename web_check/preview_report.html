@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Web Security Report Preview</title>
+    <style>
+        body {
+            font-family: 'Malgun Gothic', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f6f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 75%;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #2980b9;
+            margin-top: 30px;
+            font-size: 1.2em;
+            border-left: 5px solid #3498db;
+            padding-left: 10px;
+        }
+
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+
+        }
+
+        /* table-layout: fixed might help compliance with widths */
+        .info-table th,
+        .info-table td {
+            padding: 6px;
+            border: 1px solid #e0e0e0;
+            text-align: left;
+            word-wrap: break-word;
+        }
+
+        .info-table th {
+            background-color: #ecf0f1;
+            font-weight: bold;
+        }
+
+        .safe {
+            color: #27ae60;
+            font-weight: bold;
+        }
+
+        .danger {
+            color: #c0392b;
+            font-weight: bold;
+        }
+
+        .warn {
+            color: #f39c12;
+            font-weight: bold;
+        }
+
+        .clean {
+            color: #16a085;
+        }
+
+        .footer {
+            margin-top: 40px;
+            font-size: 0.8em;
+            text-align: center;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>🌐 웹 보안 진단 보고서 (미리보기)</h1>
+        <p><strong>대상 도메인:</strong> PREVIEW MODE</p>
+
+        <!-- Section Title -->
+        <h2>[WAF 식별]</h2>
+
+        <table class='info-table'>
+            <tr>
+                <th width='1%' style='white-space: nowrap;'>Code</th>
+                <th width='4%' style='white-space: nowrap;'>Rank</th>
+                <th width='10%' style='white-space: nowrap;'>Category</th>
+                <th width='20%' style='white-space: nowrap;'>Attack</th>
+                <th width='45%' style='white-space: nowrap;'>Description</th>
+                <th width='20%' style='white-space: nowrap;'>Result</th>
+            </tr>
+
+            <!-- Sample Row 1: Blocked -->
+            <tr>
+                <td align='center' style='white-space: nowrap;'>[A01]</td>
+                <td align='center' style='white-space: nowrap;'>🥇 1위</td>
+                <td align='center' style='white-space: nowrap;'>접근 통제 취약점<br>(Broken Access Control)</td>
+                <td style='white-space: nowrap;'><b>Path Traversal</b><br><small
+                        style='color:gray'>?file=../../../../passwd</small></td>
+                <td style='white-space: nowrap;'>"관계자 외 출입금지" 구역을 허락 없이 들락날락하는 것</td>
+                <td style='white-space: nowrap;'><span class='safe'><b>결과:</b> 403 [🛡️ 차단됨] (안전)</span></td>
+            </tr>
+
+            <!-- Sample Row 2: Vulnerable -->
+            <tr>
+                <td align='center' style='white-space: nowrap;'>[A03]</td>
+                <td align='center' style='white-space: nowrap;'>🥉 3위</td>
+                <td align='center' style='white-space: nowrap;'>인젝션 (주입)<br>(Injection)</td>
+                <td style='white-space: nowrap;'><b>SQL Injection</b><br><small style='color:gray'>?id=1 UNION SELECT
+                        1...</small></td>
+                <td style='white-space: nowrap;'>서버를 속여서 이상한 명령어를 <b>주입(Inject)</b>하여 실행시키는 것</td>
+                <td style='white-space: nowrap;'><span class='danger'><b>결과:</b> 200 [🚨 뚫림] (위험!)</span></td>
+            </tr>
+
+            <!-- Sample Row 3: Sanitized -->
+            <tr>
+                <td align='center' style='white-space: nowrap;'>[A03]</td>
+                <td align='center' style='white-space: nowrap;'>🥉 3위</td>
+                <td align='center' style='white-space: nowrap;'>인젝션 (주입)<br>(Injection)</td>
+                <td style='white-space: nowrap;'><b>XSS (Script)</b><br><small
+                        style='color:gray'>?q=&lt;script&gt;alert(1)&lt;/script&gt;</small>
+                </td>
+                <td style='white-space: nowrap;'>서버를 속여서 이상한 명령어를 <b>주입(Inject)</b>하여 실행시키는 것</td>
+                <td style='white-space: nowrap;'><span class='safe'><b>결과:</b> 200 [✅ 무해화됨] (안전)</span></td>
+            </tr>
+        </table>
+
+    </div>
+</body>
+
+</html>

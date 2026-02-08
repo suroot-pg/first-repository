@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Web Security Report - portal.kerolplay.com</title>
+    <style>
+    body { font-family: 'Malgun Gothic', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f6f9; color: #333; margin: 0; padding: 20px; }
+    .container { max-width: 900px; margin: 0 auto; background: #fff; padding: 20px; box-shadow: 0 0 10px rgba(0,0,0,0.1); border-radius: 8px; }
+    h1 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+    h2 { color: #2980b9; margin-top: 30px; font-size: 1.2em; border-left: 5px solid #3498db; padding-left: 10px; }
+    .info-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+    .info-table th, .info-table td { padding: 12px; border: 1px solid #e0e0e0; text-align: left; }
+    .info-table th { background-color: #ecf0f1; font-weight: bold; width: 30%; }
+    .safe { color: #27ae60; font-weight: bold; }
+    .danger { color: #c0392b; font-weight: bold; }
+    .warn { color: #f39c12; font-weight: bold; }
+    .clean { color: #16a085; }
+    .footer { margin-top: 40px; font-size: 0.8em; text-align: center; color: #7f8c8d; }
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>🌐 웹 보안 진단 보고서</h1>
+    <p><strong>대상 도메인:</strong> <a href="https://portal.kerolplay.com" target="_blank">https://portal.kerolplay.com</a></p>
+    <p><strong>진단 일시:</strong> 2026-02-08 01:50:46</p>
+<h2>1. 서버 기본 정보 및 헤더 점검</h2><table class='info-table'>
+<tr><th>대상 URL</th><td>https://portal.kerolplay.com</td></tr>
+<tr><th>서버 IP</th><td><span class='warn'>52.78.171.161</span></td></tr>
+<tr><th>└─ [Shodan]</th><td><span class='danger'>🚨 노출됨 (Exposed)</span></td></tr>
+<tr><th>• 열린 포트</th><td><span class='danger'>80, 443</span></td></tr>
+<tr><th>• 태그 정보</th><td><span class='warn'>cloud</span></td></tr>
+<tr><th>• 취약점 CVE</th><td><span class='safe'>✅ 발견되지 않음 (Clean)</span></td></tr>
+<tr><th>서버 IP</th><td><span class='warn'>43.201.223.177</span></td></tr>
+<tr><th>└─ [Shodan]</th><td><span class='danger'>🚨 노출됨 (Exposed)</span></td></tr>
+<tr><th>• 열린 포트</th><td><span class='danger'>443</span></td></tr>
+<tr><th>• 태그 정보</th><td><span class='warn'>cloud</span></td></tr>
+<tr><th>• 취약점 CVE</th><td><span class='safe'>✅ 발견되지 않음 (Clean)</span></td></tr>
+<tr><th>Server 헤더</th><td><span class='safe'>정보 없음</span></td></tr>
+</table>
+<h2>1.5 기술 스택 및 데이터베이스 추정</h2><table class='info-table'>
+<tr><th>특이사항</th><td><span class='safe'>없음 (보안이 잘 되어 있거나 정적 사이트임)</span></td></tr>
+</table>
+<h2>보안 헤더(Security Header) 적용 현황</h2><table class='info-table'>
+<tr><th>Strict-Transport-Security</th><td><span class='danger'>❌ 미적용 (취약)</span></td></tr>
+<tr><th>X-Frame-Options</th><td><span class='danger'>❌ 미적용 (취약)</span></td></tr>
+<tr><th>X-Content-Type-Options</th><td><span class='danger'>❌ 미적용 (취약)</span></td></tr>
+<tr><th>X-XSS-Protection</th><td><span class='danger'>❌ 미적용 (취약)</span></td></tr>
+<tr><th>[Cookie] 쿠키 미발견</th><td><span class='safe'>정보 없음 (양호)</span></td></tr>
+<tr><th>[Method] OPTIONS 요청</th><td><span class='safe'>✅ 비활성화/차단됨 (양호)</span></td></tr>
+<tr><th>[Robots] robots.txt</th><td><span class='safe'>✅ 없음 또는 접근 불가 (양호)</span></td></tr>
+</table>
+<h2>2. TLS/SSL 프로토콜 버전 점검</h2><table class='info-table'>
+<tr><th>TLS 1.3</th><td><span class='safe'>✅ 지원함 (안전)</span></td></tr>
+<tr><th>TLS 1.2</th><td><span class='safe'>✅ 지원함 (안전)</span></td></tr>
+<tr><th>TLS 1.1</th><td><span class='danger'>⚠️ 지원함 (경고: 구형 프로토콜)</span></td></tr>
+<tr><th>TLS 1.0</th><td><span class='danger'>⚠️ 지원함 (경고: 구형 프로토콜)</span></td></tr>
+<tr><th>SSL 3.0</th><td><span class='danger'>⚠️ 지원함 (경고: 구형 프로토콜)</span></td></tr>
+</table>
+<h2>3. 상세 보안 및 인증서 점검</h2><table class='info-table'>
+<tr><th>[암호화] RC4 / DES / 3DES</th><td><span class='safe'>미사용 (양호)</span></td></tr>
+<tr><th>[암호화] AES-GCM</th><td><span class='safe'>사용 중 (Aes128) (양호)</span></td></tr>
+<tr><th>[암호화] SHA-1</th><td><span class='safe'>미사용 (양호)</span></td></tr>
+<tr><th>[암호화] SHA-256 이상</th><td><span class='safe'>사용 중 (Sha256) (양호)</span></td></tr>
+<tr><th>[키교환] ECDHE 사용 여부</th><td><span class='warn'>미사용 (44550) (권장)</span></td></tr>
+<tr><th>[키교환] PFS 지원 여부</th><td><span class='danger'>미지원 (미흡)</span></td></tr>
+<tr><th>[인증서] 인증서 만료 여부</th><td><span class='safe'>유효함 (~2026-12-22) (점검일 2026-02-08 기준: 317일 남음) (양호)</span></td></tr>
+<tr><th>[인증서] RSA 키 길이</th><td><span class='safe'>2048 bit (양호)</span></td></tr>
+<tr><th>[인증서] 서명 알고리즘</th><td><span class='safe'>sha256RSA (양호)</span></td></tr>
+<tr><th>[취약점] Heartbleed</th><td><span class='safe'>발견되지 않음 (양호)</span></td></tr>
+<tr><th>[취약점] POODLE</th><td><span class='safe'>발견되지 않음 (양호)</span></td></tr>
+<tr><th>[취약점] SWEET32</th><td><span class='safe'>발견되지 않음 (양호)</span></td></tr>
+</table>
+<h2>4. WAF/CDN 식별 및 방어력 테스트</h2><table class='info-table'>
+<tr><td colspan='2'>   [WAF 식별] <b>Cloudbric (Penta Security) (Verified with wafw00f)</b></td></tr>
+<h2>   [WAF 방어력] OWASP Top 10 순차 정밀 진단 (3초 간격 / 무소음)</h2><table class='info-table'>
+<tr><th>[A01] (위험순위</th><td>1위 ) (카테고리 : 접근 통제 취약) <b>Path Traversal</b></td></tr>
+<tr><td colspan='2'>      └─ 공격: ?file=../../../../passwd</td></tr>
+<tr><td colspan='2'>      └─ 설명: 시스템 파일 열람 시도 / 위험: 설정 파일 유출</td></tr>
+<tr><td colspan='2'>      👉 결과: 400 [🛡️ 차단됨] (접속 거부)</td></tr>
+<tr><th>[A01] (위험순위</th><td>1위 ) (카테고리 : 접근 통제 취약) <b>Path Bypass  </b></td></tr>
+<tr><td colspan='2'>      └─ 공격: ?file=....//....//passwd</td></tr>
+<tr><td colspan='2'>      └─ 설명: 방화벽 우회 경로 탐색 / 위험: 방화벽 무력화</td></tr>
+<tr><td colspan='2'>      👉 결과: 400 [🛡️ 차단됨] (접속 거부)</td></tr>
+<tr><th>[A01] (위험순위</th><td>1위 ) (카테고리 : 접근 통제 취약) <b>Path Trav(Win)</b></td></tr>
+<tr><td colspan='2'>      └─ 공격: ?file=../../windows/win.ini</td></tr>
+<tr><td colspan='2'>      └─ 설명: 윈도우 시스템 파일 접근 / 위험: 윈도우 설정 유출</td></tr>
+<tr><td colspan='2'>      👉 결과: 400 [🛡️ 차단됨] (접속 거부)</td></tr>
+<tr><th>[A03] (위험순위</th><td>3위 ) (카테고리 : 인젝션 공격   ) <b>SQL Injection</b></td></tr>
+<tr><td colspan='2'>      └─ 공격: ?id=1 UNION SELECT 1...</td></tr>
+<tr><td colspan='2'>      └─ 설명: DB 조작 및 정보 탈취 / 위험: 회원정보 유출, DB 삭제</td></tr>
+<tr><td colspan='2'>      👉 결과: 200 [🛡️ 차단됨] (경고 메시지)</td></tr>
+<tr><th>[A03] (위험순위</th><td>3위 ) (카테고리 : 인젝션 공격   ) <b>XSS (Script) </b></td></tr>
+<tr><td colspan='2'>      └─ 공격: ?q=<script>alert(1)</script></td></tr>
+<tr><td colspan='2'>      └─ 설명: 스크립트 실행 공격 / 위험: 쿠키 탈취, 피싱</td></tr>
+<tr><td colspan='2'>      👉 결과: 400 [🛡️ 차단됨] (접속 거부)</td></tr>
+<tr><th>[A03] (위험순위</th><td>3위 ) (카테고리 : 인젝션 공격   ) <b>Cmd Injection</b></td></tr>
+<tr><td colspan='2'>      └─ 공격: ?cmd=; cat /etc/passwd</td></tr>
+<tr><td colspan='2'>      └─ 설명: 서버 명령어 직접 실행 / 위험: 서버 권한 장악</td></tr>
+<tr><td colspan='2'>      👉 결과: 400 [🛡️ 차단됨] (접속 거부)</td></tr>
+<tr><th>[A03] (위험순위</th><td>3위 ) (카테고리 : 인젝션 공격   ) <b>LDAP Inject  </b></td></tr>
+<tr><td colspan='2'>      └─ 공격: ?user=*)(uid=*))(|(uid=*</td></tr>
+<tr><td colspan='2'>      └─ 설명: 관리자 인증 우회 / 위험: 관리자 계정 탈취</td></tr>
+<tr><td colspan='2'>      👉 결과: 200 [🛡️ 차단됨] (경고 메시지)</td></tr>
+<tr><th>[A03] (위험순위</th><td>3위 ) (카테고리 : 인젝션 공격   ) <b>SSTI Template</b></td></tr>
+<tr><td colspan='2'>      └─ 공격: ?name={{7*7}}</td></tr>
+<tr><td colspan='2'>      └─ 설명: 템플릿 엔진 계산 실행 / 위험: 내부 파일 열람, RCE</td></tr>
+<tr><td colspan='2'>      👉 결과: 200 [🛡️ 차단됨] (경고 메시지)</td></tr>
+<tr><th>[A05] (위험순위</th><td>5위 ) (카테고리 : 보안 설정 오류) <b>Config (.env)</b></td></tr>
+<tr><td colspan='2'>      └─ 공격: /.env</td></tr>
+<tr><td colspan='2'>      └─ 설명: 환경 설정 파일 탐색 / 위험: DB 비밀번호 노출</td></tr>
+<tr><td colspan='2'>      👉 결과: 400 [🛡️ 차단됨] (접속 거부)</td></tr>
+<tr><th>[A05] (위험순위</th><td>5위 ) (카테고리 : 보안 설정 오류) <b>Git Exposure </b></td></tr>
+<tr><td colspan='2'>      └─ 공격: /.git/HEAD</td></tr>
+<tr><td colspan='2'>      └─ 설명: 소스코드 저장소 탐색 / 위험: 소스코드 전체 유출</td></tr>
+<tr><td colspan='2'>      👉 결과: 404 [🛡️ 차단됨] (접속 거부)</td></tr>
+<tr><th>[A06] (위험순위</th><td>6위 ) (카테고리 : 취약한 구성요소) <b>Log4j (RCE)  </b></td></tr>
+<tr><td colspan='2'>      └─ 공격: ?q=${jndi:ldap://...}</td></tr>
+<tr><td colspan='2'>      └─ 설명: Log4j 취약점 공격 / 위험: 관리자 권한 장악</td></tr>
+<tr><td colspan='2'>      👉 결과: 400 [🛡️ 차단됨] (접속 거부)</td></tr>
+<tr><th>[A10] (위험순위</th><td>10위) (카테고리 : 서버 위조 요청) <b>SSRF (Cloud) </b></td></tr>
+<tr><td colspan='2'>      └─ 공격: ?url=http://169.254...</td></tr>
+<tr><td colspan='2'>      └─ 설명: 클라우드 내부망 호출 / 위험: AWS 인증키 탈취</td></tr>
+<tr><td colspan='2'>      👉 결과: 200 [🛡️ 차단됨] (경고 메시지)</td></tr>
+<h2>   [WAF 방어력] OWASP Top 10 순차 정밀 진단</h2><table class='info-table'>
+<tr><td colspan='2'>   =======================================================</td></tr>
+<tr><th>• 총 점검 항목</th><td>12 개</td></tr>
+<tr><th>• 🛡️ 완벽 방어</th><td><span class='info'>12 개</span></td></tr>
+<tr><th>• ✅ 무해화</th><td><span class='safe'>0 개</span></td></tr>
+<tr><th>• 🚨 취약/위험</th><td><span class='danger'>0 개</span></td></tr>
+<tr><td colspan='2'>   =======================================================</td></tr>
+</table>
+</div><div class='footer'>Check completed at 2026-02-08 01:50:46</div></body></html>
